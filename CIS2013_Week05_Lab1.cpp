@@ -3,8 +3,8 @@
 using namespace std;
 
 
-int add_numbers(int x,int y){
-	return x+y;
+void add_numbers(int& x,int y){
+	x+=y;
 }
 
 int main(){
@@ -16,5 +16,10 @@ int main(){
 	cout << "Enter second number: ";
 	cin >> second;
 	
-	cout << "The result of calling add_numbers is: " << add_numbers(first,second) << endl;
+	add_numbers(first,second);
+	cout << "The first time calling add_numbers is: " << first << endl;
+	add_numbers(first,second);
+	cout << "The second time calling add_numbers is: " << first << endl;
+	add_numbers(first,second);
+	cout << "The third time calling add_numbers is: " << first << endl;
 }
